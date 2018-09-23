@@ -34,7 +34,7 @@ class Quadcopter_Task():
         #done = False
         # reward = zero for matching target z, -ve as you go farther, upto -20
         #reward = -min(abs(self.target_pos[2] - self.sim.pose[2]), 20.0)  
-        reward = np.tanh(1 - 0.002*(abs(self.sim.pose[:3] - self.target_pos))).sum()
+        reward = np.tanh(1 - 0.003*(abs(self.sim.pose[:3] - self.target_pos))).sum()
         #print("reward:{}".format(reward))
         '''
         if self.sim.pose[2] >= self.target_pos[2]:  # agent has crossed the target height
